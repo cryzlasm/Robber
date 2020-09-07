@@ -2,8 +2,8 @@ object frmMain: TfrmMain
   Left = 0
   Top = 0
   Caption = 'Robber'
-  ClientHeight = 585
-  ClientWidth = 870
+  ClientHeight = 640
+  ClientWidth = 1089
   Color = clBtnFace
   DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
@@ -317,15 +317,264 @@ object frmMain: TfrmMain
   OldCreateOrder = False
   Position = poScreenCenter
   DesignSize = (
-    870
-    585)
+    1089
+    640)
   PixelsPerInch = 96
   TextHeight = 13
+  object GOptions: TGroupBox
+    Left = 8
+    Top = 415
+    Width = 1073
+    Height = 191
+    Anchors = [akLeft, akRight, akBottom]
+    TabOrder = 1
+    DesignSize = (
+      1073
+      191)
+    object rgMustScanImageType: TRadioGroup
+      Left = 17
+      Top = 36
+      Width = 113
+      Height = 122
+      Anchors = [akLeft, akBottom]
+      Caption = 'Image Type'
+      ItemIndex = 0
+      Items.Strings = (
+        'Any'
+        'x86 images only'
+        'x64 images only')
+      TabOrder = 0
+    end
+    object edSearchPath: TEdit
+      Left = 17
+      Top = 9
+      Width = 937
+      Height = 21
+      Anchors = [akLeft, akTop, akRight]
+      ReadOnly = True
+      TabOrder = 1
+    end
+    object rgSignState: TRadioGroup
+      Left = 136
+      Top = 36
+      Width = 90
+      Height = 122
+      Anchors = [akLeft, akBottom]
+      Caption = 'Sign State'
+      ItemIndex = 1
+      Items.Strings = (
+        'Any'
+        'Signed')
+      TabOrder = 2
+    end
+    object rgAbuseCandidate: TRadioGroup
+      Left = 232
+      Top = 34
+      Width = 185
+      Height = 123
+      Caption = 'Abuse Candidate'
+      ItemIndex = 1
+      Items.Strings = (
+        'All'
+        'Best'
+        'Good'
+        'Bad')
+      TabOrder = 3
+    end
+    object gbColorConfig: TGroupBox
+      Left = 614
+      Top = 37
+      Width = 338
+      Height = 121
+      Anchors = [akLeft, akBottom]
+      Caption = 'Color Config'
+      TabOrder = 4
+      object lblBestChoice: TLabel
+        Left = 30
+        Top = 27
+        Width = 292
+        Height = 13
+        Caption = 
+          'DLL Count <=                       EXE Size <=                  ' +
+          '          KB'
+      end
+      object lblGoodChoice: TLabel
+        Left = 30
+        Top = 54
+        Width = 292
+        Height = 13
+        Caption = 
+          'DLL Count <=                       EXE Size <=                  ' +
+          '          KB'
+      end
+      object iBestChoice: TImage
+        Left = 8
+        Top = 27
+        Width = 16
+        Height = 16
+        AutoSize = True
+        Picture.Data = {
+          0954506E67496D61676589504E470D0A1A0A0000000D49484452000000100000
+          001008060000001FF3FF61000000097048597300000B1300000B1301009A9C18
+          000001664944415478DA9D93CF4A025114C6CF7799892C6ADFAABDB868271412
+          25965844852BF11DDC892E5CB9F0CFCE771057BE8508BACA852D42035BF900FD
+          911A99D3374D865081E3818F7BEE65CEEFDE7BEE7C483F5E88170610781244A8
+          2C931897F7C48FA9A87454B4490D55555CCA0B2C012C02CA4C735448FE8E19D5
+          20A044C07C196013D0E29896D5A24D4086A34340CA5BA85085158B1751A58AB8
+          1D27C33CFAC03B454080C3AB1CE0667C5EE3241FB07811755C8FCE7A4CA26B02
+          FAB81A25264CF6D7043CE1F2213EE19BAF07500252F7273DD8888A062C06EB1D
+          ED2379775CC336F2E206041802DEB48E442F1636BB18C0C05EF914DEEEAE3AEE
+          339F31DE3D126CA06276500802705FB4AA1F5AC469F7D06B868D4D69992DA4E9
+          28F91704BF73EEABB6F55D329C3B3EE06B5D2DFE8B658490138B66C2AF8E8BCC
+          65A6336D882325BACF37D30F805F281BA9D008015958B4B3F9B6B32B537AAF43
+          40138A218C57E9EFF009302986F3D1E70DE10000000049454E44AE426082}
+        Transparent = True
+      end
+      object iGoodChoice: TImage
+        Left = 8
+        Top = 54
+        Width = 16
+        Height = 16
+        AutoSize = True
+        Picture.Data = {
+          0954506E67496D61676589504E470D0A1A0A0000000D49484452000000100000
+          001008060000001FF3FF61000000097048597300000B1300000B1301009A9C18
+          000000A24944415478DA63FC7F8F011DE800710C10DB02B12454EC39101F06E2
+          25407C0559312392012C40DC0CC4F940CCC9801D7C07E289405C0BC47F900D60
+          05E265401CC2401C5803C45140FC1B66403B105710A919063A80B81264801690
+          7101EA0A52C06F20360019D009649491A81906BA40069C0032CCC934E024C880
+          0740863C99063CA48A01147B81E240A4381A4180A284C4C04085A40C02146526
+          64405276060013014697F12CA6030000000049454E44AE426082}
+        Transparent = True
+      end
+      object iBadChoice: TImage
+        Left = 8
+        Top = 80
+        Width = 16
+        Height = 16
+        AutoSize = True
+        Picture.Data = {
+          0954506E67496D61676589504E470D0A1A0A0000000D49484452000000100000
+          001008060000001FF3FF61000000097048597300000B1300000B1301009A9C18
+          000000A14944415478DA63FCCF800174803806886D8158122AF61C880F03F112
+          20BE82AC9811C90016206E06E27C20E664C00EBE03F14420AE05E23FC806B002
+          F132200E61200EAC01E22820FE0D33A01D882B88D40C031D405C0932400BC8B8
+          00750529E037101B800CE80432CA48D40C035D20034E0019E6641A701264C003
+          20439E4C031E52C5008ABD407120521C8D204051426260A0425206018A321332
+          20293B03003B0F38B77685E88B0000000049454E44AE426082}
+        Transparent = True
+      end
+      object lblBadChoice: TLabel
+        Left = 30
+        Top = 80
+        Width = 151
+        Height = 13
+        Caption = 'DLL Count > 4 , EXE Size > 500'
+      end
+      object sedBestChoiceDLLCount: TSpinEdit
+        Left = 104
+        Top = 24
+        Width = 57
+        Height = 22
+        MaxValue = 0
+        MinValue = 0
+        TabOrder = 0
+        Value = 2
+      end
+      object sedGoodChoiceExeSize: TSpinEdit
+        Left = 232
+        Top = 51
+        Width = 74
+        Height = 22
+        MaxValue = 0
+        MinValue = 0
+        TabOrder = 1
+        Value = 500
+        OnChange = sedGoodChoiceDLLCountChange
+      end
+      object sedGoodChoiceDLLCount: TSpinEdit
+        Left = 104
+        Top = 51
+        Width = 57
+        Height = 22
+        MaxValue = 0
+        MinValue = 0
+        TabOrder = 2
+        Value = 4
+        OnChange = sedGoodChoiceDLLCountChange
+      end
+      object sedBestChoiceExeSize: TSpinEdit
+        Left = 232
+        Top = 24
+        Width = 74
+        Height = 22
+        MaxValue = 0
+        MinValue = 0
+        TabOrder = 3
+        Value = 200
+      end
+    end
+    object btnBrowsePath: TButton
+      Left = 969
+      Top = 7
+      Width = 91
+      Height = 25
+      Anchors = [akRight, akBottom]
+      Caption = '...'
+      TabOrder = 5
+      OnClick = btnBrowsePathClick
+    end
+    object btnScan: TButton
+      Left = 969
+      Top = 38
+      Width = 91
+      Height = 25
+      Anchors = [akRight, akBottom]
+      Caption = 'Scan'
+      Enabled = False
+      TabOrder = 6
+      OnClick = btnScanClick
+    end
+    object btnAbout: TButton
+      Left = 969
+      Top = 69
+      Width = 91
+      Height = 25
+      Anchors = [akRight, akBottom]
+      Caption = 'About'
+      TabOrder = 7
+      OnClick = btnAboutClick
+    end
+    object AnalyzeProgress: TProgressBar
+      Left = 17
+      Top = 164
+      Width = 937
+      Height = 17
+      Anchors = [akLeft, akRight, akBottom]
+      DoubleBuffered = True
+      ParentDoubleBuffered = False
+      MarqueeInterval = 2
+      Step = 1
+      TabOrder = 8
+    end
+    object rgbWritePerm: TRadioGroup
+      Left = 423
+      Top = 36
+      Width = 185
+      Height = 122
+      Caption = 'Directory Write Permission'
+      ItemIndex = 1
+      Items.Strings = (
+        'Any'
+        'Weak')
+      TabOrder = 9
+    end
+  end
   object tvApplication: TTreeView
     Left = 8
     Top = 8
-    Width = 854
-    Height = 434
+    Width = 1073
+    Height = 401
     Anchors = [akLeft, akTop, akRight, akBottom]
     Color = clWhite
     Font.Charset = DEFAULT_CHARSET
@@ -341,232 +590,16 @@ object frmMain: TfrmMain
     ReadOnly = True
     TabOrder = 0
   end
-  object edSearchPath: TEdit
-    Left = 8
-    Top = 458
-    Width = 766
-    Height = 21
-    Anchors = [akLeft, akRight, akBottom]
-    ReadOnly = True
-    TabOrder = 1
-  end
-  object btnScan: TButton
-    Left = 787
-    Top = 487
-    Width = 75
-    Height = 25
-    Anchors = [akRight, akBottom]
-    Caption = 'Scan'
-    Enabled = False
-    TabOrder = 2
-    OnClick = btnScanClick
-  end
-  object btnAbout: TButton
-    Left = 787
-    Top = 518
-    Width = 75
-    Height = 25
-    Anchors = [akRight, akBottom]
-    Caption = 'About'
-    TabOrder = 3
-    OnClick = btnAboutClick
-  end
-  object btnBrowsePath: TButton
-    Left = 787
-    Top = 456
-    Width = 75
-    Height = 25
-    Anchors = [akRight, akBottom]
-    Caption = '...'
-    TabOrder = 4
-    OnClick = btnBrowsePathClick
-  end
-  object rgMustScanImageType: TRadioGroup
-    Left = 8
-    Top = 486
-    Width = 161
-    Height = 92
-    Anchors = [akLeft, akBottom]
-    Caption = 'Image Type'
-    ItemIndex = 0
-    Items.Strings = (
-      'Any'
-      'x86 images only'
-      'x64 images only')
-    TabOrder = 5
-  end
-  object rgScanOptions: TRadioGroup
-    Left = 175
-    Top = 486
-    Width = 161
-    Height = 92
-    Anchors = [akLeft, akBottom]
-    Caption = 'Scan Options'
-    ItemIndex = 1
-    Items.Strings = (
-      'Any'
-      'Signed')
-    TabOrder = 6
-  end
-  object gbColorConfig: TGroupBox
-    Left = 342
-    Top = 487
-    Width = 432
-    Height = 90
-    Anchors = [akLeft, akRight, akBottom]
-    Caption = 'Color Config'
-    TabOrder = 7
-    DesignSize = (
-      432
-      90)
-    object lblBestChoice: TLabel
-      Left = 30
-      Top = 27
-      Width = 376
-      Height = 13
-      Caption = 
-        'Best choice     DLL Count <=                            EXE Size' +
-        ' <=                            KB'
-    end
-    object lblGoodChoice: TLabel
-      Left = 31
-      Top = 55
-      Width = 377
-      Height = 13
-      Caption = 
-        'Good choice    DLL Count <=                            EXE Size ' +
-        '<=                            KB'
-    end
-    object iBestChoice: TImage
-      Left = 8
-      Top = 27
-      Width = 16
-      Height = 16
-      AutoSize = True
-      Picture.Data = {
-        07544269746D617036040000424D360400000000000036000000280000001000
-        0000100000000100200000000000000400000000000000000000000000000000
-        0000FF00FF00FF00FF00FF00FF00FF00FF00E7E7E71887878778445554BB2455
-        54DB245554DB445554BB87878778E7E7E718FF00FF00FF00FF00FF00FF00FF00
-        FF00FF00FF00FF00FF00FEFEFE01888888770E564AF514BFABFF2AF3E4FF34F9
-        F1FF34F9F1FF2AF3E5FF14BFABFF0E564AF588888877FEFEFE01FF00FF00FF00
-        FF00FF00FF00FEFEFE015F6362A00F9573FF28E4BFFF39EBD2FF37F0DCFF35F3
-        E3FF35F3E3FF36F0DDFF39EBD2FF28E4BFFF0F9573FF5F6362A0FEFEFE01FF00
-        FF00FF00FF0088888877138E64FF1DD7A2FF22DFB3FF1EE4BFFF1CE8CAFF1AEA
-        CFFF1AEACFFF1CE8CAFF1EE4C0FF22DFB3FF1DD7A2FF128E64FF88888877FF00
-        FF00E7E7E718144D34F51ECC88FF1BD296FF18D8A3FF15DCAEFF13E0B6FF12E2
-        BBFF12E2BBFF13E0B6FF15DCAEFF18D8A3FF1BD296FF1ECC88FF144D34F5E7E7
-        E718878787781D9C5BFF21C77DFF1DCD8AFF1AD295FF18D69EFF16D9A5FF15DA
-        A9FF15DAA9FF16D9A5FF18D69EFF1AD295FF1DCD8AFF21C77DFF1D9C5BFF8787
-        8778465149BB28BC64FF25C272FF23C77EFF20CC87FF1ECF8FFF1DD295FF1CD3
-        98FF1CD398FF1DD295FF1ECF90FF20CC87FF23C87EFF25C272FF28BC64FF4651
-        49BB2C4833DB2BB758FF2FBE69FF2DC273FF2AC77CFF28CA83FF27CC88FF26CD
-        8AFF26CD8AFF27CC88FF28CA83FF2AC77CFF2DC274FF2FBE69FF2BB759FF2C48
-        33DB2D4631DB32B34EFF3CBB63FF3ABF6CFF38C274FF36C579FF35C87DFF35C9
-        80FF35C980FF35C87DFF36C579FF38C274FF3ABF6CFF3CBC63FF32B34FFF2D46
-        31DB474F47BB38AE43FF4DBB61FF4BBE69FF49C16FFF48C374FF47C477FF47C5
-        79FF47C579FF47C478FF48C374FF49C16FFF4BBE69FF4DBB62FF38AE43FF474F
-        47BB878787782D8729FF5FBB63FF5FBF6BFF5EC170FF5DC374FF5CC477FF5CC5
-        78FF5CC578FF5CC477FF5DC374FF5EC170FF5FBF6BFF5FBB63FF2D8729FF8787
-        8778E7E7E7181D4016F55CB350FF76C273FF75C477FF74C67AFF74C77CFF74C8
-        7EFF74C87EFF74C77CFF74C67AFF75C477FF76C273FF5CB350FF1D4016F5E7E7
-        E718FF00FF00888888772D6D17FF81C16FFF90CB85FF8FCC87FF8ECD89FF8ECD
-        8AFF8ECD8AFF8ECD89FF8FCC87FF90CB85FF81C16FFF2D6D18FF88888877FF00
-        FF00FF00FF00FEFEFE0160625FA0326C15FF87C06DFFACD59DFFABD69EFFABD6
-        9FFFABD69FFFABD69EFFACD59DFF87C06DFF326C15FF60625FA0FEFEFE01FF00
-        FF00FF00FF00FF00FF00FEFEFE01888888771F3B0CF54D8627FF83B95EFF97C5
-        79FF97C579FF83B95EFF4D8627FF1F3B0CF588888877FEFEFE01FF00FF00FF00
-        FF00FF00FF00FF00FF00FF00FF00FF00FF00E7E7E71887878778484E44BB3041
-        24DB304124DB484E44BB87878778E7E7E718FF00FF00FF00FF00FF00FF00FF00
-        FF00}
-      Transparent = True
-    end
-    object iGoodChoice: TImage
-      Left = 8
-      Top = 54
-      Width = 16
-      Height = 16
-      AutoSize = True
-      Picture.Data = {
-        07544269746D617036040000424D360400000000000036000000280000001000
-        0000100000000100200000000000000400000000000000000000000000000000
-        0000FF00FF00FF00FF00FF00FF00FF00FF00E7E7E71887878778465455BB2A52
-        55DB2A5356DB465455BB87878778E7E7E718FF00FF00FF00FF00FF00FF00FF00
-        FF00FF00FF00FF00FF00FEFEFE018888887713535EF528B5CBFF4EE8FBFF5EEE
-        FCFF5EEEFCFF4EE8FBFF28B5CBFF13535EF588888877FEFEFE01FF00FF00FF00
-        FF00FF00FF00FEFEFE015F6364A0168EAAFF43DBFBFF62E5FCFF62E8FCFF63EA
-        FCFF63EAFCFF62E8FCFF62E5FCFF43DBFBFF168EAAFF5F6364A0FEFEFE01FF00
-        FF00FF00FF00888888771588AAFF2ACFFAFF3AD7FAFF3ADBFBFF3ADEFBFF3AE0
-        FBFF3AE0FBFF3ADEFBFF3ADBFBFF3AD7FAFF2ACFFAFF1588AAFF88888877FF00
-        FF00E7E7E718134A5EF51EC3F9FF21C9FAFF22CEFAFF22D2FAFF22D5FAFF22D6
-        FAFF22D6FAFF22D5FAFF22D2FAFF22CEFAFF21C9FAFF1EC3F9FF134A5EF5E7E7
-        E718878787781897C9FF1EBFF9FF1FC3FAFF1FC8FAFF1FCCFAFF1FCEFAFF1FCF
-        FAFF1FCFFAFF1FCEFAFF1FCCFAFF1FC8FAFF1FC3FAFF1EBFF9FF1897C9FF8787
-        8778455055BB1DB6F8FF21BBF9FF26C1F9FF26C4F9FF26C8FAFF26CAFAFF26CB
-        FAFF26CBFAFF26CAFAFF26C8FAFF26C4F9FF26C1F9FF21BBF9FF1DB6F8FF4550
-        55BB2A4655DB1FB2F9FF33BCF9FF33C0F9FF34C3F9FF34C6FAFF34C8FAFF34C9
-        FAFF34C9FAFF34C8FAFF34C6FAFF34C3F9FF33C0F9FF33BCF9FF1FB2F9FF2A46
-        55DB2A4555DB27B0F8FF45BEFAFF45C1FAFF45C3FAFF45C6FAFF45C8FAFF45C8
-        FAFF45C8FAFF45C8FAFF45C6FAFF45C3FAFF45C1FAFF45BEFAFF27B0F8FF2A46
-        55DB454F55BB2AADF8FF5AC2FAFF5AC4FAFF5AC6FAFF5AC8FAFF5AC9FAFF5ACA
-        FAFF5ACAFAFF5AC9FAFF5AC8FAFF5AC7FAFF5AC4FAFF5AC2FAFF2AADF8FF454F
-        55BB878787781B86C9FF6EC6FAFF71C9FAFF71CBFAFF71CCFBFF71CDFBFF71CD
-        FBFF71CDFBFF71CDFBFF71CCFBFF71CBFAFF71C9FAFF6EC6FAFF1B86C9FF8787
-        8778E7E7E718133F5DF55BBBF9FF89D0FBFF8AD1FBFF8AD2FBFF8AD2FBFF8AD3
-        FBFF8AD3FBFF8AD2FBFF8AD2FBFF8AD1FBFF89D0FBFF5BBBF9FF133F5DF5E7E7
-        E718FF00FF00888888771A6DA9FF8BCDFBFFA4D9FCFFA4DAFCFFA4DAFCFFA4DA
-        FCFFA4DAFCFFA4DAFCFFA4DAFCFFA4D9FCFF8BCDFBFF1A6DA9FF88888877FF00
-        FF00FF00FF00FEFEFE015F6264A01F6DA9FF8ACAFBFFC0E3FCFFC0E4FDFFC0E4
-        FDFFC0E4FDFFC0E4FDFFC0E3FCFF8ACAFBFF1F6DA9FF5F6264A0FEFEFE01FF00
-        FF00FF00FF00FF00FF00FEFEFE0188888877133B5DF53A89C9FF7BC1FAFF98CE
-        FBFF98CEFBFF7BC1FAFF3A89C9FF133B5DF588888877FEFEFE01FF00FF00FF00
-        FF00FF00FF00FF00FF00FF00FF00FF00FF00E7E7E71887878778454E55BB2941
-        54DB294154DB454E55BB87878778E7E7E718FF00FF00FF00FF00FF00FF00FF00
-        FF00}
-      Transparent = True
-    end
-    object sedBestChoiceDLLCount: TSpinEdit
-      Left = 176
-      Top = 24
-      Width = 57
-      Height = 22
-      MaxValue = 0
-      MinValue = 0
-      TabOrder = 0
-      Value = 2
-    end
-    object sedGoodChoiceExeSize: TSpinEdit
-      Left = 315
-      Top = 52
-      Width = 74
-      Height = 22
-      Anchors = [akTop, akRight]
-      MaxValue = 0
-      MinValue = 0
-      TabOrder = 1
-      Value = 500
-    end
-    object sedGoodChoiceDLLCount: TSpinEdit
-      Left = 176
-      Top = 52
-      Width = 57
-      Height = 22
-      MaxValue = 0
-      MinValue = 0
-      TabOrder = 2
-      Value = 4
-    end
-    object sedBestChoiceExeSize: TSpinEdit
-      Left = 315
-      Top = 24
-      Width = 74
-      Height = 22
-      Anchors = [akTop, akRight]
-      MaxValue = 0
-      MinValue = 0
-      TabOrder = 3
-      Value = 200
-    end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 621
+    Width = 1089
+    Height = 19
+    Panels = <
+      item
+        Text = 'Status : Ready'
+        Width = 50
+      end>
   end
   object pumTree: TPopupMenu
     Left = 624
@@ -584,7 +617,7 @@ object frmMain: TfrmMain
     Left = 568
     Top = 360
     Bitmap = {
-      494C010109001800F00010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010109001800200110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000003000000001002000000000000030
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
